@@ -23,6 +23,8 @@
 | Isolate lowest set bit | `n & (-n)` | Only the rightmost 1 |
 | XOR cancel | `a ^ a = 0` | Same values cancel |
 | Power of 2 check | `n & (n-1) == 0` | True if power of 2 |
+  
+
 
 ---
 
