@@ -3,8 +3,6 @@
  * https://leetcode.com/problems/maximum-depth-of-binary-tree/
  * Difficulty: Easy
  *
- * From your code: height(Node* root) — code.cpp line 103
- * Exact same logic — LC calls it "maxDepth", your code calls it "height".
  *
  * ─────────────────────────────────────────────────────────
  * APPROACH 1 — Recursive DFS (your height() style)
