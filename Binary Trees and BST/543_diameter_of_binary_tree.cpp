@@ -3,12 +3,6 @@
  * https://leetcode.com/problems/diameter-of-binary-tree/
  * Difficulty: Easy
  *
- * From your code:
- *   diam1(Node* root) — O(n²) brute force  — code.cpp line 134
- *   diam2(Node* root) — O(n)  optimal       — code.cpp line 146
- *
- * NOTE: Your diam counts nodes on path (leftH + rightH + 1).
- * LC counts EDGES (leftH + rightH). Adjusted below.
  *
  * ─────────────────────────────────────────────────────────
  * APPROACH 1 — Brute Force O(n²): your diam1() style
