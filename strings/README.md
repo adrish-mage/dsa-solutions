@@ -7,7 +7,7 @@
 
 ---
 
-## 🧠 Core Tricks
+##  Core Tricks
 
 | Trick | Expression | What it does |
 |-------|------------|--------------|
@@ -21,7 +21,7 @@
 
 ---
 
-## 📂 Problems
+##  Problems
 
 | # | Problem | Difficulty | Key Trick |
 |---|---------|------------|-----------|
@@ -36,7 +36,7 @@
 
 ---
 
-## 💡 Pattern Cheatsheet
+##  Pattern Cheatsheet
 
 
 ```
