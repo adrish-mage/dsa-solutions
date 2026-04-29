@@ -3,8 +3,6 @@
  * https://leetcode.com/problems/binary-tree-inorder-traversal/
  * Difficulty: Easy
  *
- * From your code: inOrder(Node* root) — code.cpp line 60
- * Adapted to collect into vector instead of printing.
  *
  * ─────────────────────────────────────────────────────────
  * APPROACH 1 — Recursive          Time: O(n)  Space: O(h)
