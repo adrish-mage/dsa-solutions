@@ -3,8 +3,6 @@
  * https://leetcode.com/problems/invert-binary-tree/
  * Difficulty: Easy
  *
- * From your code: no direct function, but the pattern is
- * post-order DFS which you use heavily (diam2, transform, etc.)
  *
  * ─────────────────────────────────────────────────────────
  * APPROACH 1 — Recursive Post-order   Time: O(n)  Space: O(h)
