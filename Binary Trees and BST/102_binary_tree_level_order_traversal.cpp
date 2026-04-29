@@ -3,10 +3,6 @@
  * https://leetcode.com/problems/binary-tree-level-order-traversal/
  * Difficulty: Medium
  *
- * From your code: levelOrder(Node* root) — code.cpp line 71
- * Your version uses a NULL sentinel to mark level boundaries.
- * LC wants [][]  — a vector of vectors, one per level.
- *
  * ─────────────────────────────────────────────────────────
  * APPROACH 1 — BFS with NULL sentinel (your style)
  *                              Time: O(n)  Space: O(n)
@@ -42,7 +38,7 @@ public:
 
         queue<TreeNode*> Q;
         Q.push(root);
-        Q.push(NULL);           // sentinel marks end of level
+        Q.push(NULL);           
 
         vector<int> currLevel;
 
@@ -54,7 +50,7 @@ public:
                 result.push_back(currLevel);
                 currLevel.clear();
                 if (!Q.empty())
-                    Q.push(NULL);   // sentinel for next level
+                    Q.push(NULL);   
             } else {
                 currLevel.push_back(curr->val);
                 if (curr->left)  Q.push(curr->left);
