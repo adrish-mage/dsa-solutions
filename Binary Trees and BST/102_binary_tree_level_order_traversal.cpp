@@ -4,7 +4,7 @@
  * Difficulty: Medium
  *
  * ─────────────────────────────────────────────────────────
- * APPROACH 1 — BFS with NULL sentinel (your style)
+ * APPROACH 1 — BFS with NULL sentinel
  *                              Time: O(n)  Space: O(n)
  * APPROACH 2 — BFS with level size counter
  *                              Time: O(n)  Space: O(n)
@@ -27,7 +27,7 @@ struct TreeNode {
 };
 
 // ─────────────────────────────────────────────────────────
-// APPROACH 1: BFS with NULL sentinel (your original style)
+// APPROACH 1: BFS with NULL sentinel 
 // Push NULL after each level to detect level boundaries
 // ─────────────────────────────────────────────────────────
 class Solution1 {
