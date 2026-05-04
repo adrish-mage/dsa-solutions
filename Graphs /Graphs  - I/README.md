@@ -1,4 +1,4 @@
-# Graphs - I
+# Graphs
 
 Graph traversal fundamentals and classic grid/connectivity problems solved using BFS and DFS.
 
@@ -27,5 +27,10 @@ Graph traversal fundamentals and classic grid/connectivity problems solved using
 | `flood-fill/flood_fill.cpp` | Flood Fill | [LC 733](https://leetcode.com/problems/flood-fill/) | Easy | DFS on 2D grid, old-color guard prevents infinite loop |
 | `number-of-islands/num_islands.cpp` | Number of Islands | [LC 200](https://leetcode.com/problems/number-of-islands/) | Medium | DFS sinks each island in-place, count triggers |
 
----
+
+## Notes
+
+- All solutions use `O(V + E)` time — every node and edge is visited at most once.
+- In Grid problems matrix is treated as an implicit graph; bounds check replaces the adjacency list lookup.
+  
 // more problems incoming :)
