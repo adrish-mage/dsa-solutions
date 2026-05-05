@@ -22,10 +22,11 @@ Graph traversal fundamentals and classic grid/connectivity problems solved using
 
 | File | Problem | Platform | Difficulty | Approach |
 |---|---|---|---|---|
-| `graph-basics/graph_basics.cpp` | Graph BFS & DFS | — | Concept | Adjacency list + queue BFS + recursive DFS |
-| `valid-path/valid_path.cpp` | Find if Path Exists in Graph | [LC 1971](https://leetcode.com/problems/find-if-path-exists-in-a-graph/) | Easy | DFS with early return on destination hit |
-| `flood-fill/flood_fill.cpp` | Flood Fill | [LC 733](https://leetcode.com/problems/flood-fill/) | Easy | DFS on 2D grid, old-color guard prevents infinite loop |
-| `number-of-islands/num_islands.cpp` | Number of Islands | [LC 200](https://leetcode.com/problems/number-of-islands/) | Medium | DFS sinks each island in-place, count triggers |
+| `graph-basics/graph_basics.cpp`  | Graph BFS & DFS | — | Concept | Adjacency list + queue BFS + recursive DFS |
+| `valid-path/valid_path.cpp`  | Find if Path Exists in Graph | [LC 1971](https://leetcode.com/problems/find-if-path-exists-in-a-graph/) | Easy | DFS with early return on destination hit |
+| `flood-fill/flood_fill.cpp`  | Flood Fill | [LC 733](https://leetcode.com/problems/flood-fill/) | Easy | DFS on 2D grid, old-color guard prevents infinite loop |
+| `number-of-islands/num_islands.cpp`   | Number of Islands | [LC 200](https://leetcode.com/problems/number-of-islands/) | Medium | DFS sinks each island in-place, count triggers |
+| `rotting-oranges/rotting_oranges.cpp` | Rotting Oranges | [LC 994](https://leetcode.com/problems/rotting-oranges/) | Medium | BFS on 2D grid with level wise counting|
 
 
 ## Notes
