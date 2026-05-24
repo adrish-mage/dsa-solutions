@@ -35,6 +35,7 @@ Process queue: for each node, reduce neighbor indegrees; push any that hit 0.
 |------|-------------|
 | `TopoSort_DFS_Kahns.cpp` | Both approaches implemented on adjacency list graph |
 | `LC210_CourseScheduleII.cpp` | LeetCode 210 — find course order or return `[]` if cycle |
+| `LC310_MinimumHeightTrees.cpp` | LeetCode 310 — find root(s) with minimum height |
 
 ---
 
@@ -43,6 +44,7 @@ Process queue: for each node, reduce neighbor indegrees; push any that hit 0.
 | # | Problem | Difficulty | Approach | Status |
 |---|---------|------------|----------|--------|
 | [210](https://leetcode.com/problems/course-schedule-ii/) | Course Schedule II | 🟡 Medium | DFS Topo + Cycle Detection | ✅ |
+| [310](https://leetcode.com/problems/minimum-height-trees/) | Minimum Height Trees | 🟡 Medium | BFS Topo-like + degree checking | ✅ |
 
 
 
