@@ -1,77 +1,35 @@
-# Graphs
-
-Complete graph problem set across 5 parts — from traversal fundamentals to advanced algorithms. Solved in C++ using adjacency list representation.
-
----
-
-## Structure
-
+#  Graph III — Topological Sort
+##  Approaches
+### 1. DFS-based (Post-order stack)
 ```
-Graphs/
-├── Graphs - I /       BFS, DFS, grid problems, connectivity
-├── Graphs - II /      Cycle detection, bipartite, all paths, component count
-├── Graphs - III /     Topological sort, shortest paths (BFS/Dijkstra)
-├── Graphs - IV /      MST (Prim's, Kruskal's), DSU
-└── Graphs - V /       Advanced — Bridges, Articulation points, SCC
+Run DFS. Push a node to the stack only AFTER all its descendants finish.
+Pop the stack at the end → valid topo order.
 ```
-
+**Key invariant:** A node enters the stack only once all nodes reachable from it are already in the stack — so it ends up *before* them when popped.
+- Time: `O(V + E)`
+- Space: `O(V)` stack + recursion
+### 2. Kahn's Algorithm (BFS / Indegree)
+```
+Compute indegree of every node.
+Push all nodes with indegree 0 into a queue.
+Process queue: for each node, reduce neighbor indegrees; push any that hit 0.
+```
+**Bonus:** If the total processed nodes `< V`, a cycle exists (Kahn's doubles as cycle detection in directed graphs).
+- Time: `O(V + E)`
+- Space: `O(V)`
 ---
-
-## Graphs - I — Traversal Fundamentals
-
-**Concepts:** Graph representation (adjacency list, matrix, edge list), BFS, DFS, implicit graphs, grid traversal, connectivity.
-
-| File | Problem | Platform | Difficulty | Approach |
-|------|---------|----------|------------|----------|
-| `graph_basics.cpp` | Graph BFS & DFS | — | Concept | Adjacency list + queue BFS + recursive DFS |
-| `valid_path.cpp` | Find if Path Exists in a Graph | [LC 1971](https://leetcode.com/problems/find-if-path-exists-in-a-graph/) | Easy | DFS with early return on destination hit |
-| `flood_fill.cpp` | Flood Fill | [LC 733](https://leetcode.com/problems/flood-fill/) | Easy | DFS on 2D grid, old-color guard prevents infinite loop |
-| `num_islands.cpp` | Number of Islands | [LC 200](https://leetcode.com/problems/number-of-islands/) | Medium | DFS sinks each island in-place, count triggers |
-| `rotting_oranges.cpp` | Rotting Oranges | [LC 994](https://leetcode.com/problems/rotting-oranges/) | Medium | BFS on 2D grid with level-wise counting |
-
+##  Files
+| File | Description |
+|------|-------------|
+| `TopoSort_DFS_Kahns.cpp` | Both approaches implemented on adjacency list graph |
+| `LC210_CourseScheduleII.cpp` | LeetCode 210 — find course order or return `[]` if cycle |
+| `LC310_MinimumHeightTrees.cpp` | LeetCode 310 — find root(s) with minimum height |
+| `LC2115_FindAllRecipes.cpp` | LeetCode 2115 — find all makeable recipes using Kahn's + string graph |
 ---
-
-## Graphs - II — Cycle Detection & Classic Problems
-
-**Concepts:** Disconnected component count, undirected cycle detection (parent tracking), directed cycle detection (3-state DFS), bipartite check (BFS 2-coloring), all paths via backtracking.
-
-| File | Problem | Platform | Difficulty | Approach |
-|------|---------|----------|------------|----------|
-| `graph_basics.cpp` | Undirected/Directed Cycle, Bipartite, All Paths | — | Concept | Class-based graph with 4 core algorithms |
-| `number_of_provinces.cpp` | Number of Provinces | [LC 547](https://leetcode.com/problems/number-of-provinces/) | Medium | Matrix → adjacency list, DFS component count |
-| `course_schedule.cpp` | Course Schedule | [LC 207](https://leetcode.com/problems/course-schedule/) | Medium | Directed DFS, 3-state cycle detection (vis + recPath) |
-
+##  Problems
+| # | Problem | Difficulty | Approach | Status |
+|---|---------|------------|----------|--------|
+| [210](https://leetcode.com/problems/course-schedule-ii/) | Course Schedule II | 🟡 Medium | DFS Topo + Cycle Detection | ✅ |
+| [310](https://leetcode.com/problems/minimum-height-trees/) | Minimum Height Trees | 🟡 Medium | BFS Topo-like + degree checking | ✅ |
+| [2115](https://leetcode.com/problems/find-all-possible-recipes-from-given-supplies/) | Find All Possible Recipes | 🟡 Medium | Kahn's on string graph + recipe index map | ✅ |
 ---
-
-## Graphs - III — Topological Sort & Shortest Paths
-
-*Incoming*
-
----
-
-## Graphs - IV — MST & DSU
-
-*Incoming*
-
----
-
-## Graphs - V — Advanced
-
-*Incoming*
-
----
-
-## Key Patterns
-[ covered till now ]
-
-**BFS** — level-order, use for shortest path in unweighted graphs. Queue + visited array. O(V + E).
-
-**DFS** — recursive, use for cycle detection, path finding, component marking. O(V + E).
-
-**Grid as graph** — each cell is a node, 4-directional neighbours are edges. No explicit adjacency list needed; recurse directly with `(r, c)` coordinates.
-
-**Directed vs undirected cycle detection** — undirected needs parent tracking; directed needs a separate recursion-path array (`recPath[]`) that resets on backtrack.
-
-**Bipartite** — BFS 2-coloring. `color[]` initialized to `-1`. If any two adjacent nodes share a color, not bipartite.
-
-**Component count** — always loop over all nodes in the caller. Each fresh DFS/BFS start from an unvisited node = one new component.  
